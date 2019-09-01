@@ -100,6 +100,7 @@ autoUpdater.on('download-progress', (progressObj) => {
 })
 autoUpdater.on('update-downloaded', (info) => {
   sendStatusToWindow('Update downloaded');
+    autoUpdater.quitAndInstall();
 });
 app.on('ready', function() {
   // Create the Menu
@@ -149,7 +150,6 @@ app.on('ready', function()  {
  app.on('ready', function()  {
    sendStatusToWindow('Im ready');
    autoUpdater.checkForUpdates();
-
  });
 // autoUpdater.on('checking-for-update', () => {
 // })
